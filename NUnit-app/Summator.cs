@@ -4,31 +4,34 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NUnit_app
+namespace Summator
 {
     public static class Summator
     {
-        public static int Sum(int[] arr)
+        public static long Sum(int[] arr)
         {
-            int sum = arr[0];
+            long sum = 0;
 
-            for(int i = 1; i < arr.Length; i++)
+            for (int i = 0; i < arr.Length; i++)
             {
                 sum += arr[i];
             }
+
+            // return sum
             return sum;
         }
-        //here is the sample test
-        public static void Test_SumTwoNumbers()
+
+        public static double Average(int[] arr)
         {
-            if (Sum(new int[] { 1, 2 }) != 3)
+            double sum = 0;
+
+            for (int i = 0; i < arr.Length; i++)
             {
-                throw new Exception("1 + 2 != 3");
+                sum += arr[i];
             }
-            else
-            {
-                Console.WriteLine("Test pass");
-            }
+
+            // return sum
+            return sum / arr.Length;
         }
     }
 }
